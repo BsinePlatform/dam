@@ -8,10 +8,11 @@ const cardStyle = {
   card: {
     border: "0",
     marginBottom: "30px",
-    marginTop: "30px",
+    marginTop: "0px",
     borderRadius: "6px",
     color: "rgba(" + hexToRgb(blackColor) + ", 0.87)",
     background: whiteColor,
+    // width: "272px",
     width: "100%",
     boxShadow: "0 1px 4px 0 rgba(" + hexToRgb(blackColor) + ", 0.14)",
     position: "relative",
@@ -19,7 +20,29 @@ const cardStyle = {
     flexDirection: "column",
     minWidth: "0",
     wordWrap: "break-word",
-    fontSize: ".875rem"
+    fontFamily: 'Lato',
+    fontWeight: '300',
+    fontSize: "12px"
+  },
+  cardWorkflow: {
+    border: "0",
+    marginBottom: "30px",
+    marginTop: "0px",
+    borderRadius: "6px",
+    color: "rgba(" + hexToRgb(blackColor) + ", 0.87)",
+    background: whiteColor,
+    // width: "272px",
+    width: "100%",
+    boxShadow: "0 1px 4px 0 rgba(" + hexToRgb(blackColor) + ", 0.14)",
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    minWidth: "0",
+    wordWrap: "break-word",
+    fontFamily: 'Lato',
+    fontWeight: '300',
+    fontSize: "12px",
+    height: "90px"
   },
   cardPlain: {
     background: "transparent",

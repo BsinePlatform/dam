@@ -18,6 +18,7 @@ import Search from "@material-ui/icons/Search";
 // core components
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
+import GridItem from "components/Grid/GridItem.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
@@ -48,16 +49,16 @@ export default function AdminNavbarLinks() {
     setOpenProfile(null);
   };
   return (
-    <div>
+    <GridItem xs={12} sm={12} md={12} lg={12}>
       <div className={classes.searchWrapper}>
         <CustomInput
           formControlProps={{
             className: classes.margin + " " + classes.search
           }}
           inputProps={{
-            placeholder: "Search",
+            placeholder: "Pesquisar",
             inputProps: {
-              "aria-label": "Search"
+              "aria-label": "Pesquisar"
             }
           }}
         />
@@ -65,6 +66,7 @@ export default function AdminNavbarLinks() {
           <Search />
         </Button>
       </div>
+      <div className={classes.navButtons}>
       <Button
         color={window.innerWidth > 959 ? "transparent" : "white"}
         justIcon={window.innerWidth > 959}
@@ -218,7 +220,8 @@ export default function AdminNavbarLinks() {
             </Grow>
           )}
         </Poppers>
+        </div>
       </div>
-    </div>
+    </GridItem>
   );
 }

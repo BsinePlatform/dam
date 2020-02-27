@@ -45,40 +45,36 @@ export default function Sidebar(props) {
           [" " + classes.whiteFont]: activeRoute(prop.layout + prop.path)
         });
         return (
-          <NavLink //xs={12} sm={12} md={12} lg={12}
+          <NavLink xs={12} sm={12} md={12} lg={12}
             to={prop.layout + prop.path}
             className={activePro + classes.item}
             activeClassName="active"
             key={key}
           >
-            <div button className={classes.itemLink + listItemClasses}>
-              <ListItem>
-                {typeof prop.icon === "string" ? (
-                  <Icon
-                    className={classNames(classes.itemIcon, whiteFontClasses, {
-                      [classes.itemIconRTL]: props.rtlActive
-                    })}
-                  >
-                    {prop.icon}
-                  </Icon>
-                ) : (
-                  <prop.icon
-                    className={classNames(classes.itemIcon, whiteFontClasses, {
-                      [classes.itemIconRTL]: props.rtlActive
-                    })}
-                  />
-                )}
-                  
-              </ListItem>
-                <ListItemText
-                primary={props.rtlActive ? prop.rtlName : prop.name}
-                className={classNames(classes.itemText, whiteFontClasses, {
-                  [classes.itemTextRTL]: props.rtlActive
-                })}
-                disableTypography={true}
+            <ListItem  button className={classes.itemLink + listItemClasses}>
+              {typeof prop.icon === "string" ? (
+                <Icon
+                  className={classNames(classes.itemIcon, whiteFontClasses, {
+                    [classes.itemIconRTL]: props.rtlActive
+                  })}
+                >
+                  {prop.icon}
+                </Icon>
+              ) : (
+                <prop.icon
+                  className={classNames(classes.itemIcon, whiteFontClasses, {
+                    [classes.itemIconRTL]: props.rtlActive
+                  })}
                 />
-              </div>
-            
+              )}
+            </ListItem>
+            <ListItemText
+              primary={props.rtlActive ? prop.rtlName : prop.name}
+              className={classNames(classes.itemText, whiteFontClasses, {
+                [classes.itemTextRTL]: props.rtlActive
+              })}
+              disableTypography={true}
+            />
           </NavLink>
         );
       })}
@@ -101,6 +97,34 @@ export default function Sidebar(props) {
   );
   return (
     <div>
+      <Hidden mdUp implementation="css">
+        <Drawer
+          variant="temporary"
+          anchor={props.rtlActive ? "left" : "right"}
+          open={props.open}
+          classes={{
+            paper: classNames(classes.drawerPaper, {
+              [classes.drawerPaperRTL]: props.rtlActive
+            })
+          }}
+          onClose={props.handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true // Better open performance on mobile.
+          }}
+        >
+          {brand}
+          <div className={classes.sidebarWrapper}>
+            {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
+            {links}
+          </div>
+          {image !== undefined ? (
+            <div
+              className={classes.background}
+              style={{ backgroundImage: "url(" + image + ")" }}
+            />
+          ) : null}
+        </Drawer>
+      </Hidden>
       <Hidden smDown implementation="css">
         <Drawer
           anchor={props.rtlActive ? "right" : "left"}
@@ -114,6 +138,12 @@ export default function Sidebar(props) {
         >
           {brand}
           <div className={classes.sidebarWrapper}>{links}</div>
+          {image !== undefined ? (
+            <div
+              className={classes.background}
+              style={{ backgroundImage: "url(" + image + ")" }}
+            />
+          ) : null}
         </Drawer>
       </Hidden>
     </div>

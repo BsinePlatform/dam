@@ -8,28 +8,25 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import styles from "assets/jss/material-dashboard-react/components/categoryStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/buttomStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function Category(props) {
+export default function Buttom(props) {
   const classes = useStyles();
   const { className, children, name, ...rest } = props;
-  const categoryClasses = classNames({
-    [classes.category]: true,
-    [classes.categoryName]: true,
-    [classes.categoryTitle]: true,
-    [classes.categorySubTitle]: true,
+  const buttomClasses = classNames({
+    [classes.buttom]: true,
     [className]: className !== undefined
   });
   return (
-    <div className={categoryClasses} {...rest}>
+    <div className={buttomClasses} {...rest}>
       {children}
     </div>
   );
 }
 
-Category.propTypes = {
+Buttom.propTypes = {
   className: PropTypes.string,
   plain: PropTypes.bool,
   profile: PropTypes.bool,

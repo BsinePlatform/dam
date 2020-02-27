@@ -107,6 +107,14 @@ const headerLinksStyle = theme => ({
       margin: "10px 15px 0"
     },
     display: "inline-block"
+  },
+  navButtons: {
+    [theme.breakpoints.down("sm")]: {
+      width: "-webkit-fill-available",
+      margin: "10px 15px 0"
+    },
+    display: "inline-block",
+    float: "right"
   }
 });
 

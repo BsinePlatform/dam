@@ -8,28 +8,31 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import styles from "assets/jss/material-dashboard-react/components/categoryStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/loginStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function Category(props) {
+export default function Login(props) {
   const classes = useStyles();
   const { className, children, name, ...rest } = props;
-  const categoryClasses = classNames({
-    [classes.category]: true,
-    [classes.categoryName]: true,
-    [classes.categoryTitle]: true,
-    [classes.categorySubTitle]: true,
+  const loginClasses = classNames({
+    [classes.login]: true,
+    [classes.loginBody]: true,
+    [classes.logoImage]: true,
+    [classes.loginTitle]: true,
+    [classes.loginInputs]: true,
+    [classes.loginLinks]: true,
+    [classes.loginButtom]: true,
     [className]: className !== undefined
   });
   return (
-    <div className={categoryClasses} {...rest}>
+    <div className={loginClasses} {...rest}>
       {children}
     </div>
   );
 }
 
-Category.propTypes = {
+Login.propTypes = {
   className: PropTypes.string,
   plain: PropTypes.bool,
   profile: PropTypes.bool,

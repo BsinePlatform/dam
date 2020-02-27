@@ -17,6 +17,10 @@ export default function Card(props) {
   const { className, children, plain, profile, chart, ...rest } = props;
   const cardClasses = classNames({
     [classes.card]: true,
+    [classes.cardHeaderPlan]: true,
+    [classes.cardHeaderExec]: true,
+    [classes.cardHeaderImp]: true,
+    [classes.cardHeaderFinal]: true,
     [classes.cardPlain]: plain,
     [classes.cardProfile]: profile,
     [classes.cardChart]: chart,

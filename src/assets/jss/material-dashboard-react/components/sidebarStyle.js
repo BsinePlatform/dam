@@ -23,6 +23,7 @@ const sidebarStyle = theme => ({
     bottom: "0",
     left: "0",
     zIndex: "1",
+    backgroundColor: "#1B2A49",
     ...boxShadow,
     width: drawerWidth,
     [theme.breakpoints.up("md")]: {
@@ -95,17 +96,21 @@ const sidebarStyle = theme => ({
   },
   logoImage: {
     width: "30px",
-    display: "inline-block",
+    // display: "inline-block",
     maxHeight: "30px",
-    marginLeft: "10px",
-    marginRight: "15px"
+    margin: "auto",
+    marginBottom: "30px"
+    // marginLeft: "10px",
+    // marginRight: "15px"
   },
   img: {
     width: "35px",
     top: "22px",
     position: "absolute",
     verticalAlign: "middle",
-    border: "0"
+    border: "0",
+    textAlign: "center",
+    justifyContent: "none"
   },
   background: {
     position: "absolute",
@@ -148,10 +153,10 @@ const sidebarStyle = theme => ({
   itemLink: {
     width: "auto",
     transition: "all 300ms linear",
-    margin: "10px 15px 0",
-    borderRadius: "3px",
+    // margin: "10px 15px 0",
+    borderRadius: "0px",
     position: "relative",
-    display: "block",
+    // display: "block",
     padding: "10px 15px",
     backgroundColor: "transparent",
     ...defaultFont
@@ -162,10 +167,13 @@ const sidebarStyle = theme => ({
     fontSize: "24px",
     lineHeight: "30px",
     float: "left",
-    marginRight: "15px",
+    // marginRight: "15px",
+    margin: "auto",
     textAlign: "center",
     verticalAlign: "middle",
-    color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)"
+    // color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)",
+    color: '#A2A6B0',
+    justifyContent: "none;"
   },
   itemIconRTL: {
     marginRight: "3px",
@@ -175,15 +183,20 @@ const sidebarStyle = theme => ({
   itemText: {
     ...defaultFont,
     margin: "0",
-    lineHeight: "30px",
-    fontSize: "14px",
-    color: whiteColor
+    // lineHeight: "30px",
+    fontSize: "10px",
+    // color: whiteColor,
+    color: '#A2A6B0',
+    textAlign: "center",
+    fontFamily: 'Lato',
+    fontWeight: '500' 
   },
   itemTextRTL: {
     textAlign: "right"
   },
   whiteFont: {
-    color: whiteColor
+    // color: whiteColor,
+    color: '#F5F5F5',
   },
   purple: {
     backgroundColor: primaryColor[0],
@@ -195,16 +208,16 @@ const sidebarStyle = theme => ({
   },
   blue: {
     backgroundColor: infoColor[0],
-    boxShadow:
-      "0 12px 20px -10px rgba(" +
-      hexToRgb(infoColor[0]) +
-      ",.28), 0 4px 20px 0 rgba(" +
-      hexToRgb(blackColor) +
-      ",.12), 0 7px 8px -5px rgba(" +
-      hexToRgb(infoColor[0]) +
-      ",.2)",
+    // boxShadow:
+    //   "0 12px 20px -10px rgba(" +
+    //   hexToRgb(infoColor[0]) +
+    //   ",.28), 0 4px 20px 0 rgba(" +
+    //   hexToRgb(blackColor) +
+    //   ",.12), 0 7px 8px -5px rgba(" +
+    //   hexToRgb(infoColor[0]) +
+    //   ",.2)",
     "&:hover,&:focus": {
-      backgroundColor: infoColor[0],
+      backgroundColor: infoColor[1],
       boxShadow:
         "0 12px 20px -10px rgba(" +
         hexToRgb(infoColor[0]) +

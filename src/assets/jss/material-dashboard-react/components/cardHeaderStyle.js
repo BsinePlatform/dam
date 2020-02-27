@@ -5,16 +5,20 @@ import {
   infoCardHeader,
   primaryCardHeader,
   roseCardHeader,
-  whiteColor
+  whiteColor,
+  blackColor,
+  hexToRgb
 } from "assets/jss/material-dashboard-react.js";
 
 const cardHeaderStyle = {
   cardHeader: {
-    padding: "0.75rem 1.25rem",
-    marginBottom: "0",
-    borderBottom: "none",
-    background: "transparent",
+    boxShadow: "0 1px 4px 0 rgba(" + hexToRgb(blackColor) + ", 0.14)",
+    // padding: "0.75rem 1.25rem",
+    marginBottom: "10px",
+    background: "#fff",
     zIndex: "3 !important",
+    borderBottomLeftRadius: "6px",
+    borderBottomRightRadius: "6px",
     "&$cardHeaderPlain,&$cardHeaderIcon,&$cardHeaderStats,&$warningCardHeader,&$successCardHeader,&$dangerCardHeader,&$infoCardHeader,&$primaryCardHeader,&$roseCardHeader": {
       margin: "0 15px",
       padding: "0",
@@ -22,13 +26,14 @@ const cardHeaderStyle = {
       color: whiteColor
     },
     "&:first-child": {
-      borderRadius: "calc(.25rem - 1px) calc(.25rem - 1px) 0 0"
+      // borderRadius: "calc(.25rem - 1px) calc(.25rem - 1px) 0 0"
     },
     "&$warningCardHeader,&$successCardHeader,&$dangerCardHeader,&$infoCardHeader,&$primaryCardHeader,&$roseCardHeader": {
       "&:not($cardHeaderIcon)": {
-        borderRadius: "3px",
+        borderRadius: "6px",
         marginTop: "-20px",
-        padding: "15px"
+        padding: "15px",
+        paddinBottom: "0px"
       }
     },
     "&$cardHeaderStats svg": {
@@ -50,7 +55,8 @@ const cardHeaderStyle = {
     },
     "&$cardHeaderStats$cardHeaderIcon": {
       textAlign: "right"
-    }
+    },
+    height: "54px"
   },
   cardHeaderPlain: {
     marginLeft: "0px !important",

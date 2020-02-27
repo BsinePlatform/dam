@@ -28,7 +28,8 @@ import Language from "@material-ui/icons/Language";
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
-import Typography from "views/Typography/Typography.js";
+// import Typography from "views/Typography/Typography.js";
+import Workflow from "views/Workflow/Workflow.js";
 import Icons from "views/Icons/Icons.js";
 import Maps from "views/Maps/Maps.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
@@ -38,7 +39,14 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 
 const dashboardRoutes = [
   {
-    path: "/dashboard/:id",
+    path: "/login",
+    name: "Login",
+    icon: Dashboard,
+    component: DashboardPage,
+    layout: "/user"
+  },
+  {
+    path: "/dashboard",
     name: "Marca",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
@@ -62,11 +70,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/typography",
+    path: "/workflow",
     name: "Workflow",
     rtlName: "طباعة",
     icon: LibraryBooks,
-    component: Typography,
+    component: Workflow,
     layout: "/admin"
   },
   {

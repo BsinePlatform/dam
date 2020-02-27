@@ -13,8 +13,10 @@ import Menu from "@material-ui/icons/Menu";
 import AdminNavbarLinks from "./AdminNavbarLinks.js";
 import RTLNavbarLinks from "./RTLNavbarLinks.js";
 import Button from "components/CustomButtons/Button.js";
+import GridItem from "components/Grid/GridItem.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerStyle.js";
+import GridContainer from "components/Grid/GridContainer.js";
 
 const useStyles = makeStyles(styles);
 
@@ -36,16 +38,18 @@ export default function Header(props) {
   });
   return (
     <AppBar className={classes.appBar + appBarClasses}>
-      <Toolbar className={classes.container}>
-        <div className={classes.flex}>
+      <Toolbar>
+      <GridContainer xs={12} sm={8} md={12} lg={4}>
           {/* Here we create navbar brand, based on route name */}
           <Button color="transparent" href="#" className={classes.title}>
-            {makeBrand()}
+            Logo da Marca
           </Button>
-        </div>
-        <Hidden smDown implementation="css">
+      </GridContainer>
+      <GridContainer xs={12} sm={12} md={12} lg={12}>
+        {/* <Hidden smDown implementation="css">
           {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
-        </Hidden>
+        </Hidden> */}
+        <AdminNavbarLinks />
         <Hidden mdUp implementation="css">
           <IconButton
             color="inherit"
@@ -55,6 +59,7 @@ export default function Header(props) {
             <Menu />
           </IconButton>
         </Hidden>
+      </GridContainer>
       </Toolbar>
     </AppBar>
   );

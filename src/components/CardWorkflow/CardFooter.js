@@ -8,31 +8,33 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import styles from "assets/jss/material-dashboard-react/components/categoryStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/cardFooterStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function Category(props) {
+export default function CardFooter(props) {
   const classes = useStyles();
-  const { className, children, name, ...rest } = props;
-  const categoryClasses = classNames({
-    [classes.category]: true,
-    [classes.categoryName]: true,
-    [classes.categoryTitle]: true,
-    [classes.categorySubTitle]: true,
+  const { className, children, plain, profile, stats, chart, ...rest } = props;
+  const cardFooterClasses = classNames({
+    [classes.cardFooter]: true,
+    [classes.cardFooterPlain]: plain,
+    [classes.cardFooterProfile]: profile,
+    [classes.cardFooterStats]: stats,
+    [classes.cardFooterChart]: chart,
     [className]: className !== undefined
   });
   return (
-    <div className={categoryClasses} {...rest}>
+    <div className={cardFooterClasses} {...rest}>
       {children}
     </div>
   );
 }
 
-Category.propTypes = {
+CardFooter.propTypes = {
   className: PropTypes.string,
   plain: PropTypes.bool,
   profile: PropTypes.bool,
+  stats: PropTypes.bool,
   chart: PropTypes.bool,
   children: PropTypes.node
 };

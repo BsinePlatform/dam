@@ -3,7 +3,7 @@ import { hexToRgb, whiteColor } from "assets/jss/material-dashboard-react.js";
 const customTabsStyle = {
   cardTitle: {
     float: "left",
-    padding: "10px 10px 10px 0px",
+    padding: "0px 10px 10px 0px",
     lineHeight: "24px"
   },
   cardTitleRTL: {

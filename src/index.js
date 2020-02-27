@@ -24,8 +24,16 @@ import { isAuthenticated } from "./services/auth";
 // core components
 import Admin from "layouts/Admin.js";
 import RTL from "layouts/RTL.js";
+import User from "layouts/User.js";
 
 import "assets/css/material-dashboard-react.css?v=1.8.0";
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Lato:300,400,700,900', 'sans-serif']
+  }
+});
 
 const hist = createBrowserHistory();
 
@@ -46,6 +54,7 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/admin" component={Admin} />
+      <Route path="/user" component={User} />
       <Route path="/rtl" component={RTL} />
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
