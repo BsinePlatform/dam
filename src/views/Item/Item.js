@@ -7,7 +7,7 @@ import GridItem from "components/Grid/GridItem.js";
 import Card from "components/CardWorkflow/Card.js";
 import CardImage from "components/CardItem/CardImage.js";
 // bootstrap
-import { Row, ButtonGroup, Button } from "react-bootstrap"
+import { Row, Col, Button, ButtonToolbar } from "react-bootstrap"
 
 import Image from "assets/img/ativos/image-64.png";
 
@@ -29,48 +29,52 @@ export default function Item(props) {
           </CardImage>
       </GridItem>
       
-      <div xs={3} sm={3} md={3} lg={3}>
+      <GridItem xs={3} sm={3} md={3} lg={3}>
         <Card className={classes.sidebarRight}>
           <div className={classes.firstLineSR}>
             {/* First Line Buttons */}
-            <Row className='btt-row'>
-              <ButtonGroup id='btt-gp' className='col-3'>
+            <Row className='col-12 btt-row'>
+              <ButtonToolbar id='btt-gp' className='col-12'>
                 <Button className='col-4 btn-secondary btt'>Download</Button>
                 <Button className='col-4 btn-secondary btt'>Compartilhar</Button>
                 <Button className='col-4 btn-secondary btt'>Postar</Button>
-              </ButtonGroup>
+              </ButtonToolbar>
             </Row>
             {/* Second Line Buttons */}
             <Row className='btt-row'>
-              <ButtonGroup id='btt-gp-sl' className='col-1'>
+              <ButtonToolbar id='btt-gp-sl' className='col-4'>
                 <Button className='col-6 btn-secondary btt-second'>A</Button>
                 <Button className='col-6 btn-secondary btt-second'>B</Button>
-              </ButtonGroup>
-              <ButtonGroup id='btt-gp-sl' className='col-1'>
+              </ButtonToolbar>
+              <ButtonToolbar id='btt-gp-sl' className='col-4'>
                 <Button className='col-6 btn-secondary btt-second'>C</Button>
                 <Button className='col-6 btn-secondary btt-second'>D</Button>
-              </ButtonGroup>
-              <ButtonGroup id='btt-gp-sl' className='col-1'>
+              </ButtonToolbar>
+              <ButtonToolbar id='btt-gp-sl' className='col-4'>
                 <Button className='col-6 btn-secondary btt-second'>E</Button>
                 <Button className='col-6 btn-secondary btt-second'>F</Button>
-              </ButtonGroup>
+              </ButtonToolbar>
             </Row>
             {/* Third Line Buttons */}
             <Row className='btt-row'>
-              <ButtonGroup id='btt-gp-tl' className='col-3'>
+              <Col className='content-adjust'>
+              <ButtonToolbar id='btt-gp-tl' className='col-12'>
                 <Button className='col-4 btn-secondary btt-third'>Fundamentos</Button>
                 <Button className='col-4 btn-secondary btt-third'>Metadados</Button>
                 <Button className='col-4 btn-secondary btt-third'>Relações</Button>
-              </ButtonGroup>
+              </ButtonToolbar>
+              </Col>
             </Row>
 
             {/* Sidebar Right Content */}
             <Row className='btt-row'>
-                <p className='col-3 content-title'>INFORMAÇÕES</p>
+              <Col >
+                <p className='content-title'><span>INFORMAÇÕES</span></p>
+              </Col>
             </Row>
           </div>
         </Card>
-      </div>
+      </GridItem>
       </GridContainer>
   );
 }

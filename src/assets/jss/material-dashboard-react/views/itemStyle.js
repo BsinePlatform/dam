@@ -7,17 +7,17 @@
       height: "100%",
       border: '0!important',
       borderRadius: '0!important',
-      position: 'fixed',
+      position: 'realtive',
       padding: '0!important',
       margin: '0!important'
     },
     firstLineSR: {
       height: '70px!important',
-      width: '100%',
       zIndex: '10',
       backgroundColor: '#444C61',
       "& .btt-row": {
-        margin: '0'
+        margin: '0',
+        padding: '0'
       },
       "& #btt-gp": {
         height: '70px!important',
@@ -93,15 +93,20 @@
       },
       "& .content-title": {
         backgroundColor: '#F3F5F5',
+        widht: '100%',
         height: '25px',
-        width: '100%',
-        fontFamily: "'Roboto', 'Lato', 'Helvetica', 'Arial', sans-serif",
-        fontSize: '12px',
-        weight: '300',
+        fontFamily: "'Lato', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+        fontSize: '15px',
+        fontWeight: '400',
+        color: '#707070',
         textAlign: 'center',
-        margin: '10px',
+        marginTop: '10px',
+        "& span": {
+          verticalAlign: 'middle'
+        }
+      },
+      "& .content-adjust": {
         padding: '0'
-        
       },
     },
   };
