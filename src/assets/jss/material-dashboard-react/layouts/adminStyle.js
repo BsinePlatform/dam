@@ -30,7 +30,12 @@ const appStyle = theme => ({
   container,
   map: {
     marginTop: "70px"
-  }
+  },
+  item: {
+    marginTop: "70px",
+    padding: "15px 15px",
+    minHeight: "calc(100vh - 123px)"
+  },
 });
 
 export default appStyle;

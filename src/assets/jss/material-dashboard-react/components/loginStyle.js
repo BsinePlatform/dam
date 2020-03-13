@@ -14,8 +14,27 @@ import {
         transition: "all 150ms ease 0s",
         "& #alignLogin": {
             margin:"auto",
-            marginTop: "0px"
+            marginTop: "25px"
+        }, 
+        "& button": {
+            height: '52px',
+            width: '50%',
+            background: "#43425D",
+            fontSize: "26px",
+            fontWeight: "400",
+            color: "#fff",
+            border: "0",
+            borderRadius: "10px",
+            fontFamily: '"Lato", "Roboto", "Helvetica", "Arial", sans-serif',
+            fontWeight: "400",
+            lineHeight: "1.5em",
+            textDecoration: "capitalize",
+            transition: 'transform .2s'
         },
+        "& button:hover": {
+            background: "#272551",
+            transform: 'scale(1.01)'
+        }
     },
     loginBody: {
         margin: "auto",
@@ -48,7 +67,7 @@ import {
     },
     loginTitle: {
         "& div #slogan":{
-            marginTop: "30px",
+            marginTop: "10px",
             marginBottom: "10px"
         },
         fontSize: "34px",
@@ -59,14 +78,23 @@ import {
         textAlign: "center",
         "& #alignInputLogin": {
             margin:"auto",
-            marginTop: "0px"
+            marginTop: "0px",
         },
         "& div":{
             margin: "0px",
-            paddingTop: "10px",
+            padding: "10px 0px",
             },
         "& div input":{
-            paddingTop: "10px",
+            paddingTop: "5px",
+            border: '0',
+            borderRadius: '0',
+            borderColor: '#000',
+            opacity: '50%',
+            borderBottom: 'solid 0.5px',
+            // fontFamily: 'FontAwesome',
+            fontStyle: 'normal',
+            fontWeight: 'normal',
+            textDecoration: 'inherit'
             }
     },
     loginLinks: {
